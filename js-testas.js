@@ -114,6 +114,17 @@ console.log(`${ageInUnits.days.toFixed(0)} days.`);
 5. Parašykite programą, kuri konvertuos termometro
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
 */
+// Function to convert Fahrenheit to Celsius
+const fahrenheitToCelsius = (fahrenheit) => {
+  return ((fahrenheit - 32) * 5) / 9;
+};
+
+// Function to convert Celsius to Fahrenheit
+const celsiusToFahrenheit = (celsius) => {
+  return (celsius * 9) / 5 + 32;
+};
+
+// Function to perform the conversion based on user input
 
 /*
 6. Sukurkite kodą, kuris išspausdins į konsolę
