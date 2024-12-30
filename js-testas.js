@@ -114,17 +114,29 @@ console.log(`${ageInUnits.days.toFixed(0)} days.`);
 5. Parašykite programą, kuri konvertuos termometro
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
 */
-// Function to convert Fahrenheit to Celsius
-const fahrenheitToCelsius = (fahrenheit) => {
-  return ((fahrenheit - 32) * 5) / 9;
-};
 
-// Function to convert Celsius to Fahrenheit
-const celsiusToFahrenheit = (celsius) => {
-  return (celsius * 9) / 5 + 32;
-};
+function fahrenheitToCelsius(f) {
+  return ((f - 32) * 5) / 9;
+}
 
-// Function to perform the conversion based on user input
+function celsiusToFahrenheit(c) {
+  return (c * 9) / 5 + 32;
+}
+
+let temperature = 25;
+let unit = 'C';
+
+if (unit === 'C') {
+  console.log(
+    `${temperature} C is ${celsiusToFahrenheit(temperature).toFixed(0)} F`
+  );
+} else if (unit === 'F') {
+  console.log(
+    `${temperature} F is ${fahrenheitToCelsius(temperature).toFixed()} C`
+  );
+} else {
+  console.log("Invalid unit. Please use 'C' or 'F'.");
+}
 
 /*
 6. Sukurkite kodą, kuris išspausdins į konsolę
@@ -165,6 +177,27 @@ for (let i = 1; i <= rows; i++) {
 /*
 8. Parašykite kodą, kuris apskaičiuos kiek liko dienų iki Kalėdų.
 */
+
+const daysUntilChristmas = () => {
+  const today = new Date();
+  const currentYear = today.getFullYear();
+
+  const christmas = new Date(currentYear, 11, 25);
+
+  if (today > christmas) {
+    christmas.setFullYear(currentYear + 1);
+  }
+
+  const difference = christmas - today;
+
+  const differenceDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
+
+  return differenceDays;
+};
+
+const remainingDays = daysUntilChristmas();
+
+console.log(`Days until Christmas left: ${remainingDays}`);
 
 /*
 9. Parašykite kodą, kuris apjungia masyvo duomenis į vieną
