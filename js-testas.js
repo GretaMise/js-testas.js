@@ -80,6 +80,36 @@ pasakytų kiek tai yra sekundėmis, minutėmis, valandomis,
 dienomis.
 */
 
+const convertAge = (ageInYears) => {
+  const secondsInAMinute = 60;
+  const secondsInAnHour = secondsInAMinute * 60;
+  const secondsInADay = secondsInAnHour * 24;
+  const secondsInAYear = secondsInADay * 365;
+
+  const totalSeconds = ageInYears * secondsInAYear;
+  const totalMinutes = totalSeconds / secondsInAMinute;
+  const totalHours = totalSeconds / secondsInAnHour;
+  const totalDays = totalSeconds / secondsInADay;
+
+  return {
+    seconds: totalSeconds,
+    minutes: totalMinutes,
+    hours: totalHours,
+    days: totalDays,
+  };
+};
+
+const ageInYears = 25;
+
+const ageInUnits = convertAge(ageInYears);
+
+console.log(`Age: ${ageInYears} years`);
+console.log(`Which is:`);
+console.log(`${ageInUnits.seconds.toFixed(0)} seconds.`);
+console.log(`${ageInUnits.minutes.toFixed(0)} minutes.`);
+console.log(`${ageInUnits.hours.toFixed(0)} hours.`);
+console.log(`${ageInUnits.days.toFixed(0)} days.`);
+
 /*
 5. Parašykite programą, kuri konvertuos termometro
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
@@ -91,6 +121,15 @@ duomenis iš Farenheito į Celsijų, ir atvirkščiai.
 dešimties neturėtų būti brūkšniuko.
 */
 
+const numbers = [];
+
+for (let i = 1; i <= 10; i++) {
+  numbers.push(i);
+}
+
+const result = numbers.join('-');
+console.log(result);
+
 /*
 7. Panaudokite for ciklus, kad sukurtumėte tokį vaizdą konsolėje.
 *
@@ -99,6 +138,18 @@ dešimties neturėtų būti brūkšniuko.
 ****
 *****
 */
+
+const rows = 5;
+
+for (let i = 1; i <= rows; i++) {
+  let stars = '';
+
+  for (let j = 1; j <= i; j++) {
+    stars += '*';
+  }
+
+  console.log(stars);
+}
 
 /*
 8. Parašykite kodą, kuris apskaičiuos kiek liko dienų iki Kalėdų.
@@ -110,6 +161,14 @@ tekstinę eilutę. Turėtumėte gauti tokį rezultatą:
 Tomas,Dainius,Paulius,Jonas
 Tomas+Dainius+Paulius+Jonas
 */
+
+const names = ['Tomas', 'Dainius', 'Paulius', 'Jonas'];
+
+const separated = names.join(',');
+console.log(separated);
+
+const plus = names.join('+');
+console.log(plus);
 
 /*
 10. Parašykite kodą, kuris sugeneruos dvylikos simbolių
