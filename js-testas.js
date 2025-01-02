@@ -16,8 +16,8 @@ const randomEur = Math.floor(Math.random() * 1000) + 1;
 
 const dol = convertEurToDol(randomEur);
 
-console.log(`Eur sum: ${randomEur} Eur`);
-console.log(`Eur converted to US Dollars: ${dol.toFixed(2)} Dol`);
+console.log(`1.Eur sum: ${randomEur} Eur`);
+console.log(`1.1 Eur converted to US Dollars: ${dol.toFixed(2)} Dol`);
 
 /*
 2. Sukurkite funkciją, kuri paverstų dolerius į eurus.
@@ -37,8 +37,8 @@ const randomDol = Math.floor(Math.random() * 1000) + 1;
 
 const euros = convertDolToEur(randomDol);
 
-console.log(`Sum of US Dollars: ${randomDol} US Dollars`);
-console.log(`US Dollars converted to Euros: ${euros.toFixed(2)} Eur`);
+console.log(`2.Sum of US Dollars: ${randomDol} US Dollars`);
+console.log(`2.2 US Dollars converted to Euros: ${euros.toFixed(2)} Eur`);
 
 /*
 3. Parašykite programą, kuri suskaičiuotų žmogaus BMI (body
@@ -59,7 +59,7 @@ const category = (BMI) => {
   if (BMI < 18.5) {
     return 'Per mazas svoris';
   } else if (BMI >= 18.5 && BMI < 25) {
-    return 'Normalu';
+    return 'Normalus svoris :)';
   } else {
     return 'Virssvoris';
   }
@@ -69,10 +69,10 @@ const height = 1.8;
 const BMI = calculateBMI(weight, height);
 const categoryBMI = category(BMI);
 
-console.log(`Weight: ${weight} kg`);
-console.log(`Height: ${height} m`);
-console.log(`BMI: ${BMI.toFixed(2)} `);
-console.log(`Category: ${categoryBMI} `);
+console.log(`3. Weight: ${weight} kg`);
+console.log(`3.1 Height: ${height} m`);
+console.log(`3.2 BMI: ${BMI.toFixed(2)} `);
+console.log(`3.3 Category: ${categoryBMI} `);
 
 /*
 4. Parašykite programą, kuri iš duoto žmogaus amžiaus metais
@@ -103,12 +103,12 @@ const ageInYears = 25;
 
 const ageInUnits = convertAge(ageInYears);
 
-console.log(`Age: ${ageInYears} years`);
-console.log(`Which is:`);
-console.log(`${ageInUnits.seconds.toFixed(0)} seconds.`);
-console.log(`${ageInUnits.minutes.toFixed(0)} minutes.`);
-console.log(`${ageInUnits.hours.toFixed(0)} hours.`);
-console.log(`${ageInUnits.days.toFixed(0)} days.`);
+console.log(`4. Age: ${ageInYears} years`);
+console.log(`4.0 Which is:`);
+console.log(`4.1 ${ageInUnits.seconds.toFixed(0)} seconds.`);
+console.log(`4.2 ${ageInUnits.minutes.toFixed(0)} minutes.`);
+console.log(`4.3 ${ageInUnits.hours.toFixed(0)} hours.`);
+console.log(`4.4 ${ageInUnits.days.toFixed(0)} days.`);
 
 /*
 5. Parašykite programą, kuri konvertuos termometro
@@ -128,14 +128,14 @@ let unit = 'C';
 
 if (unit === 'C') {
   console.log(
-    `${temperature} C is ${celsiusToFahrenheit(temperature).toFixed(0)} F`
+    `5. ${temperature} C is ${celsiusToFahrenheit(temperature).toFixed(0)} F`
   );
 } else if (unit === 'F') {
   console.log(
-    `${temperature} F is ${fahrenheitToCelsius(temperature).toFixed()} C`
+    `5. ${temperature} F is ${fahrenheitToCelsius(temperature).toFixed()} C`
   );
 } else {
-  console.log("Invalid unit. Please use 'C' or 'F'.");
+  console.log("5. Invalid unit. Please use 'C' or 'F'.");
 }
 
 /*
@@ -151,7 +151,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 const result = numbers.join('-');
-console.log(result);
+console.log(`6. ${result}`);
 
 /*
 7. Panaudokite for ciklus, kad sukurtumėte tokį vaizdą konsolėje.
@@ -171,7 +171,7 @@ for (let i = 1; i <= rows; i++) {
     stars += '*';
   }
 
-  console.log(stars);
+  console.log(`7. ${stars}`);
 }
 
 /*
@@ -197,7 +197,7 @@ const daysUntilChristmas = () => {
 
 const remainingDays = daysUntilChristmas();
 
-console.log(`Days until Christmas left: ${remainingDays}`);
+console.log(`8. Days until Christmas left: ${remainingDays}`);
 
 /*
 9. Parašykite kodą, kuris apjungia masyvo duomenis į vieną
@@ -209,10 +209,10 @@ Tomas+Dainius+Paulius+Jonas
 const names = ['Tomas', 'Dainius', 'Paulius', 'Jonas'];
 
 const separated = names.join(',');
-console.log(separated);
+console.log(`9. ${separated}`);
 
 const plus = names.join('+');
-console.log(plus);
+console.log(`9.1 ${plus}`);
 
 /*
 10. Parašykite kodą, kuris sugeneruos dvylikos simbolių
@@ -220,3 +220,37 @@ slaptažodį. Slaptažodyje privalo būti bent po vieną: didžioji raidė,
 mažoji raidė, skaičius, specialusis simbolis. Visi slaptažodžio
 simboliai privalo būti atsitiktiniai ir atsitiktine tvarka.
 */
+
+function generatePassword(length) {
+  const uppercaseLetters = 'ASDFGHJKL';
+  const lowercaseLetters = 'asdfghjkl';
+  const digits = '1234567890';
+  const specialCharacters = '!@#$%^&*()';
+
+  const passwordArray = [
+    uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)],
+    lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)],
+    digits[Math.floor(Math.random() * digits.length)],
+    specialCharacters[Math.floor(Math.random() * specialCharacters.length)],
+  ];
+
+  const allCharacters =
+    uppercaseLetters + lowercaseLetters + digits + specialCharacters;
+
+  for (let i = passwordArray.length; i < length; i++) {
+    passwordArray.push(
+      allCharacters[Math.floor(Math.random() * allCharacters.length)]
+    );
+  }
+
+  const shuffledPassword = passwordArray
+    .sort(() => Math.random() - 0.5)
+    .join('');
+
+  return shuffledPassword;
+}
+
+// sort - sis metodas maisys atsitiktinius simbolius slaptazodzio masyve!!!!!
+
+const password = generatePassword(12);
+console.log(`10. Generated Password: ${password}`);
